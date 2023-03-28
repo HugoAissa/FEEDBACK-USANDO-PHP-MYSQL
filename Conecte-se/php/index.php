@@ -1,3 +1,4 @@
+
 <?php
 $mensagem  = "Preencha os dados do feedback";
 
@@ -15,7 +16,7 @@ if (isset($_POST["nome"], $_POST["email"], $_POST["sobrenome"], $_POST["experien
     $experiencia = filter_input (INPUT_POST, "experiencia", FILTER_SANITIZE_STRING);
     $ava = filter_input (INPUT_POST, "str", FILTER_SANITIZE_STRING);
 
-    if (!$nome || !$sobrenome || !$email || !$experiencia || !$ava) {
+    if (!$nome || !$sobrenome || !$email || !$experiencia) {
         $mensagem  = "Dados invalidos tente novamente";
     }else{
         $mensagem  = "Feedback Enviado com sucesso";
@@ -90,14 +91,14 @@ if (isset($_POST["nome"], $_POST["email"], $_POST["sobrenome"], $_POST["experien
         <form method="POST">
         <div class="mensagem">
             <?=$mensagem ?>
-        </div>
+        </div><br>
             <label id='txt'> Nome </label>
-            <input id='inp' type='text' name='nome' placeholder='Insira seu nome' require/>
+            <input id='inp' type='text' name='nome' placeholder='Insira seu nome' require/><br><br>
             <label id='txt'> Sobrenome </label>
-            <input id='inp' type='text' name='sobrenome' placeholder='Insira seu sobrenome' require/>
+            <input id='inp' type='text' name='sobrenome' placeholder='Insira seu sobrenome' require/><br><br>
 
             <label id='txt'> Email </label>
-            <input id='inp' type='text' name='email' placeholder='Insira seu email' require/>
+            <input id='inp' type='text' name='email' placeholder='Insira seu email' require/><br><br>
 
 
             <li>
